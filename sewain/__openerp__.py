@@ -32,7 +32,7 @@
         'view/invoice_mail.xml',
         'wizard/pinjam_wizard.xml',
         'wizard/checkout_wizard.xml',
-        'report/reports.xml',
+        'view/reports.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

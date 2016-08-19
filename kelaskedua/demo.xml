@@ -1,0 +1,35 @@
+<openerp>
+    <data>
+        
+          <record id="object0" model="kelaskedua.topik">
+            <field name="name">Python Programming For Beginner</field>
+            <field name="description">Python programming for beginner provide video tutorials to guide beginner to understand programming in python language. This Course is set of 5 learning season, each season contain 5-6 videos.</field>
+          </record>
+        
+          <record id="object1" model="kelaskedua.topik">
+            <field name="name">PHP MYSQL</field>
+            <field name="description">This Course provide video tutorials to learn about PHP and MySQL in website development. each PHP and MySQL will explained in this course, although student need to explore more to understand the brief of PHP and MySQL itself.</field>
+          </record>
+        
+          <record id="object2" model="kelaskedua.topik">
+            <field name="name">Youtube API</field>
+            <field name="description">This course will teach you how to:
+                1. Create your own Youtube API Credentials
+                2. Integrated your Youtube API Credentials with PHP Applications
+                3. Get video info using Youtube API
+
+                p/s: You must have PHP and MySQL knowledge to follow this lesson</field>
+          </record>
+        
+          <record id="object3" model="kelaskedua.topik">
+            <field name="name">Jalan tikus</field>
+            <field name="description">There are many things around you that you can transform into something more useful. </field>
+          </record>
+        
+          <record id="object4" model="kelaskedua.topik">
+            <field name="name">Power Point</field>
+            <field name="description">This lesson teach you how to use powerpoint to help you explain your project</field>
+          </record>
+        
+    </data>
+</openerp>

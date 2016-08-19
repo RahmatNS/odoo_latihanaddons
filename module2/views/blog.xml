@@ -1,0 +1,69 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="artikel_form_view">
+            <field name="name">artikel.form</field>
+            <field name="model">blog.artikel</field>
+            <field name="arch" type="xml">
+                <form string="Artikel Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="img_url"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_article_list_kanban">
+            <field name="name">blog.artikel.kanban</field>
+            <field name="model">blog.artikel</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div
+                                    t-attf-class="oe_kanban_global_click oe_semantic_html_override oe_kanban_card {{record.group_fancy==1 ? 'oe_kanban_card_fancy' : ''}}">
+                                <div
+                                    t-attf-class="oe_kanban_content">
+                                    <!-- title -->
+                                    <field name="name"/>
+                                    <img  src="https://tpc.googlesyndication.com/simgad/12424230985811382533" class="img img-responsive oe_kanban_image"/>
+
+                                </div>
+                                <div class="oe_dropdown_kanban">
+                                    <!-- dropdown menu -->
+                                    <div class="oe_dropdown_toggle">
+                                        <i class="fa fa-caret-down fa-lg"/>
+                                        <ul class="oe_dropdown_menu">
+                                            <li>
+                                                <a type="delete">Delete</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="oe_clear"></div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="list_artikel_action">
+            <field name="name">Artikel</field>
+            <field name="res_model">blog.artikel</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Buat artikel baru
+                </p>
+            </field>
+        </record>
+        <!-- Top Level Menu -->
+        <menuitem id="main_blog_menu" name="Blog Kita"/>
+        <menuitem id="artikel_menu" name="Daftar Artikel"
+            parent="main_blog_menu"/>
+        <menuitem id="artikel" name="Artikel" parent="artikel_menu"
+            action="list_artikel_action"/>
+    </data>
+</openerp>

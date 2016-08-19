@@ -1,0 +1,19 @@
+<openerp>
+    <data>
+        <record model="blog.artikel" id="artikel01">
+            <field name="name">Berita 1</field>
+            <field name="description">Detail dari berita 1 ada di sini
+
+Sampai ke sini
+            </field>
+        </record>
+        <record model="blog.artikel" id="artikel02">
+            <field name="name">Berita 2</field>
+            <!-- tidak ada deskripsi berita 2 -->
+        </record>
+        <record model="blog.artikel" id="artikel03">
+            <field name="name">Berita 3</field>
+            <field name="description">Deskripsi dari berita 3</field>
+        </record>
+    </data>
+</openerp>

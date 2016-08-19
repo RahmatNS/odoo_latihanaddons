@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="peminjaman_form_view">
+            <field name="name">peminjaman.form</field>
+            <field name="model">sewain.peminjaman</field>
+            <field name="arch" type="xml">
+                <form string="Peminjaman Form">
+                    <header>
+                        <button name="action_draft" type="object"
+                                string="Reset to draft"
+                                states="confirmed,done"/>
+                        <button name="action_confirm" type="object"
+                                string="Confirm" states="draft"
+                                class="oe_highlight"/>
+                        <button name="action_done" type="object"
+                                string="Mark as done" states="confirmed"
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="item_name"/>
+                            <field name="kuantitas"/>
+                            <field name="waktu_mulai"/>
+                            <field name="waktu_selesai"/>
+                            <field name="durasi"/>
+                            <field name="harga_dasar"/>
+                            <field name="sub_total"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="peminjaman_tree_view">
+            <field name="name">sewain.peminjaman.tree</field>
+            <field name="model">sewain.peminjaman</field>
+            <field name="arch" type="xml">
+                <tree string="Idea list">
+                    <field name="item_name"/>
+                    <field name="kuantitas"/>
+                    <field name="waktu_mulai"/>
+                    <field name="waktu_selesai"/>
+                    <field name="durasi"/>
+                    <field name="harga_dasar"/>
+                    <field name="sub_total"/>
+                </tree>
+            </field>
+        </record>
+        <!-- window action -->
+        <!--
+            The following tag is an action definition for a "window action",
+            that is an action opening a view or a set of views
+        -->
+        <record model="ir.actions.act_window" id="daftar_item_peminjaman_action">
+            <field name="name">Peminjaman</field>
+            <field name="res_model">sewain.peminjaman</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Tambahkan item baru
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_peminjaman" name="Cart" parent="menu_sewain"
+                  action="daftar_item_peminjaman_action"/>
+        <!-- Full id location:
+             action="openacademy.course_list_action"
+             It is not required when it is the same module -->
+    </data>
+</openerp>

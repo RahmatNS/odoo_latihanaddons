@@ -46,8 +46,8 @@ class Checkout_wizard(models.TransientModel):
     @api.multi
     def _send_email(self,invoice):
 
-        print invoice.total_harga
-        print self.ids[0]
+        template_id = self.env['ir.model.data'].get_object_reference('sewain', 'email_template_sewain_invoice')
+        self.env['mail.template'].browse(template_id[1]).send_mail(invoice.id, force_send=True)
         # return {'type': 'ir.actions.act_window_close'}
         # return template.send_mail(self.id, force_send=True)
         print self.env.uid

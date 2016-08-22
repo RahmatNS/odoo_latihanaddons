@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
+    <data noupdate="0">
 
         <!--Email template -->
         <record id="email_template_sewain_invoice" model="mail.template">
             <field name="name">Sewain Invoice- Send by Email</field>
             <field name="email_from">rahmatnasution49@gmail.com</field>
             <field name="subject">Sewain Invoice</field>
-            <field name="mail_to">rahmatnasution@outlook.com</field>
-            <!-- <field name="model_id" ref="sewain.modeltransaksi"/> -->
+            <field name="email_to">${object.user_id.email|safe}</field>
+            <field name="model_id" ref="sewain.model_sewain_transaksi"/>
             <field name="auto_delete" eval="True"/>
-           <!--  <field name="report_template" ref="report_transaksi"/>
-            <field name="report_name">sewain.report_transaksi_view</field> -->
+            <field name="report_template" ref="report_transaksi"/>
+            <field name="report_name">sewain.report_transaksi_view</field>
             <field name="lang"></field>
             <field name="body_html">
                 <![CDATA[
-<p>Hello</>
+<p>Halo, terima kasih sudah memilih sewain app</p>
+<p>Kami hadir untuk memberikan kemudahan untuk memenuhi kebutuhan anda</p>
             ]]>
                 
             </field>

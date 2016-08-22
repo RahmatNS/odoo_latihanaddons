@@ -29,7 +29,8 @@
             <field name="name">transaksi.tree</field>
             <field name="model">sewain.transaksi</field>
             <field name="arch" type="xml">
-                <tree string="Idea list">
+                <tree string="Transaksi list">
+                    <field name="create_date" string="Waktu Transaksi"/>
                     <field name="peminjaman_ids">
                         <tree string="Detail Peminjaman">
                             <field name="item_name"/>

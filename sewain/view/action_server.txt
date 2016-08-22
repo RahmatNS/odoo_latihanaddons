@@ -1,0 +1,17 @@
+
+        <record id="action_server_send_invoice" model="ir.actions.server">
+            <field name="name">Send Invoice Through Email</field>
+            <field name="model_id" ref="sewain.model_sewain_transaksi"/>
+            <field name="condition">True</field>
+            <field name="type">ir.actions.server</field>
+            <field name="template_id" ref="email_template_sewain_invoice"/>
+            <field name="state">email</field>
+        </record>
+
+        <record id="rule_action_server_send_invoice" model="base.action.rule">
+            <field name="name">Send Invoice After Checkout</field>
+            <field name="model_id" ref="sewain.model_sewain_transaksi"/>
+            <field name="sequence">50</field>
+            <field name="kind">on_create</field>
+            <field name="server_action_ids" eval="[(6, 0, [ref('action_server_send_invoice')])]"/>
+        </record>
